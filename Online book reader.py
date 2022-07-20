@@ -19,6 +19,24 @@ class Library:
     def find_book(self, book_name):     #find by name, return content
         return self.books.get(book_name)
 
+class User:
+    def __init__(self,users):
+        self.users=users  #{id: user name}
+
+    def add_user(self,id,user):
+        if self.users.get(id)==None:
+            self.users[id]=user
+            return True
+        else:
+            return False
+
+    def delete_user(self,id,user):
+        if self.users.get(id)!=None:
+            del[self.users[id]]
+            return True
+        else:
+            return False
+
 b1={
     "Course in miracles":"kgjdfkjkj",
     "Bible":"sjfshf"
@@ -31,3 +49,4 @@ print(reader1.books)
 
 r=reader1.find_book(book1[0])
 print(r)
+
