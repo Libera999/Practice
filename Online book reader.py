@@ -19,7 +19,7 @@ class Library:
     def find_book(self, book_name):     #find by name, return content
         return self.books.get(book_name)
 
-class User:
+class User_action:
     def __init__(self,users):
         self.users=users  #{id: user name}
 
@@ -36,6 +36,36 @@ class User:
             return True
         else:
             return False
+
+class User:
+    def __init__(self,id,details):
+       self.userid=id
+       self.details=details
+
+class Display:
+    def __init__(self,book,user):
+        self.active_book=book
+        self.active_user=user
+        self.page=0
+
+    def update_page(self):
+        pass
+
+    def display_book(self,book):
+        self.page = 0
+        self.active_book = book
+
+        self.update_page()
+
+    def next_page(self):
+        self.page+=1
+        self.update_page()
+
+    def previous_page(self):
+        self.page-=1
+        self.update_page()
+
+
 
 b1={
     "Course in miracles":"kgjdfkjkj",
