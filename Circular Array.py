@@ -13,5 +13,14 @@ class CircularArray:
     def set(self, index, item):
         self.array[index_rotate(index)] = item
 
-        
+class Iterator:
+    def __init__(self):
+        self.current=-1
+
+    def array_iterator(self,array):
+        pass
+
+    def next(self,array):
+     self.current+=1
+     return array[convert(self.current)]
 
