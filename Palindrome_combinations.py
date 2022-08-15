@@ -1,4 +1,4 @@
-# all possible palindrome combinations from a string
+# all possible palindrome combinations for a string
 
 from itertools import permutations
 
