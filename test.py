@@ -61,3 +61,37 @@ if a == test:
     print(max(a)-min(a))
 else:
     print(-1) """
+
+
+def sublist(input_list):
+
+    if input_list == []:
+        return [[]]  # add empty list
+    else:
+        s = sublist(input_list[1:])
+        p = s + [[input_list[0]] + b for b in s]
+    return p
+
+
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+
+
+def subsets(numbers):
+    if numbers == []:
+        return [[]]
+    x = subsets(numbers[1:])
+    return x + [[numbers[0]] + y for y in x]
+
+
+for i in range(1, n):
+    seq = a[:]
+    seq.remove(seq[i-1])  # list without i
+
+    comb = [x for x in subsets(seq) if len(x) == k]
+    sum = 0
+    sum1 = 0
+    for points in comb:
+
+        for j in range[0, k-1]:
+            sum += abs(a[i]-a[j])
